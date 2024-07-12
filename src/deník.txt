@@ -1,0 +1,12 @@
+1) založit nový python projekt
+2) vytvoření app "api" pro lepší přehlednost a rozčlenění v projektu
+3) vytvoření api endpointů a modelu Country
+4) vytvoření serializéru
+5) vytvoření views pro všechny endpointy. Rozdělení na 2 views podle toho, jestli url obsahuje id pro country nebo jen country.
+6) Doladění výstupů do api tak, aby struktura (adresáře, proměnné) odpovídala požadavkům.
+7) Ladění chybových hlášek
+8) Při put a post metodě mně přišlo nelogické mít možnost vytvářet stejné hodoty name a countryCode, proto jsem toto omezil pouze na data, které ještě v databázi nejsou (kromě ukládání country, která už měla tyto údaje předtím uložené)
+9) Nepřišel jsem na to, jaká je logika pro přiřazování groupId, tak jsem této hodnotě přiřadil stejnou, jako pro country.id. Proto jsem v modelu musel upravit, že groupId může být null, neboť nejdřív se musí uložit country, kde se přiřadí id a poté se může toto id načíst do groupId. 
+10) Protože jsou při put a post metodě povinné parametry name a countryCode, v serializéru jsem ošetřil, aby toto bylo vyžadováno.
+11) na závěr jsem vytvořil filtrování pro query parametry country-code, limit a offset, aby backend vracel správné hodnoty pro get countries. Vytvoření stránkování a linky na jednotlivé stránky s výsledky
+12) Dodělání poznámek, hlavně ve view pro lepší přehlednost
